@@ -5,7 +5,7 @@ st.set_page_config(page_title = "Student Class test Score", page_icon=":tada:", 
 st.subheader("Enter the marks of students")
 df = pd.DataFrame(
     [
-       {"Name": " ", "Practical Examination Score": ""}
+       {"Name": "Rita", "Practical Examination Score": 10}
     ]  
 )
 edited_df = st.experimental_data_editor(df, num_rows = "dynamic")
