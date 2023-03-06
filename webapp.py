@@ -1,6 +1,14 @@
 import streamlit as st
-st.set_page_config(page_title = "My webpage", page_icon=":tada:", layout="wide")
+import pandas as pd
+st.set_page_config(page_title = "Student Class test Score", page_icon=":tada:", layout="wide")
 
-st.subheader("Hi, I'm Pooja")
-st.title("This is my first webapp")
-st.write("testing")
+st.subheader("Enter the marks of students")
+df = pd.DataFrame(
+    [
+       {"Name": " ", "Practical Examination Score": ""}
+    ]  
+)
+edited_df = st.experimental_data_editor(df, num_rows = "dynamic")
+
+student_name = edited_df.loc[edited_df["Practical Examination Score"].idxmax()]["Name"]
+st.markdown(f"Most number are attained by**{student_name}** 🎈")
